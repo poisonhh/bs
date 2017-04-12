@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qczl.dao.CarMapper" >
+  <resultMap id="BaseResultMap" type="com.qczl.model.Car" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="color" property="color" jdbcType="VARCHAR" />
+    <result column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="model" property="model" jdbcType="VARCHAR" />
+    <result column="rent_price" property="rentPrice" jdbcType="DOUBLE" />
+    <result column="store_number" property="storeNumber" jdbcType="INTEGER" />
+    <result column="car_number" property="carNumber" jdbcType="INTEGER" />
+    <result column="buy_time" property="buyTime" jdbcType="TIMESTAMP" />
+    <result column="car_detail" property="carDetail" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, color, brand, model, rent_price, store_number, car_number, buy_time, car_detail
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from car
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from car
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qczl.model.Car" >
+    insert into car (id, color, brand, 
+      model, rent_price, store_number, 
+      car_number, buy_time, car_detail
+      )
+    values (#{id,jdbcType=INTEGER}, #{color,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
+      #{model,jdbcType=VARCHAR}, #{rentPrice,jdbcType=DOUBLE}, #{storeNumber,jdbcType=INTEGER}, 
+      #{carNumber,jdbcType=INTEGER}, #{buyTime,jdbcType=TIMESTAMP}, #{carDetail,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qczl.model.Car" >
+    insert into car
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="color != null" >
+        color,
+      </if>
+      <if test="brand != null" >
+        brand,
+      </if>
+      <if test="model != null" >
+        model,
+      </if>
+      <if test="rentPrice != null" >
+        rent_price,
+      </if>
+      <if test="storeNumber != null" >
+        store_number,
+      </if>
+      <if test="carNumber != null" >
+        car_number,
+      </if>
+      <if test="buyTime != null" >
+        buy_time,
+      </if>
+      <if test="carDetail != null" >
+        car_detail,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="color != null" >
+        #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="model != null" >
+        #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="rentPrice != null" >
+        #{rentPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="storeNumber != null" >
+        #{storeNumber,jdbcType=INTEGER},
+      </if>
+      <if test="carNumber != null" >
+        #{carNumber,jdbcType=INTEGER},
+      </if>
+      <if test="buyTime != null" >
+        #{buyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="carDetail != null" >
+        #{carDetail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qczl.model.Car" >
+    update car
+    <set >
+      <if test="color != null" >
+        color = #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        brand = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="model != null" >
+        model = #{model,jdbcType=VARCHAR},
+      </if>
+      <if test="rentPrice != null" >
+        rent_price = #{rentPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="storeNumber != null" >
+        store_number = #{storeNumber,jdbcType=INTEGER},
+      </if>
+      <if test="carNumber != null" >
+        car_number = #{carNumber,jdbcType=INTEGER},
+      </if>
+      <if test="buyTime != null" >
+        buy_time = #{buyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="carDetail != null" >
+        car_detail = #{carDetail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qczl.model.Car" >
+    update car
+    set color = #{color,jdbcType=VARCHAR},
+      brand = #{brand,jdbcType=VARCHAR},
+      model = #{model,jdbcType=VARCHAR},
+      rent_price = #{rentPrice,jdbcType=DOUBLE},
+      store_number = #{storeNumber,jdbcType=INTEGER},
+      car_number = #{carNumber,jdbcType=INTEGER},
+      buy_time = #{buyTime,jdbcType=TIMESTAMP},
+      car_detail = #{carDetail,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

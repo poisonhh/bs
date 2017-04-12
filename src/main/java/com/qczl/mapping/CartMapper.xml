@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qczl.dao.CartMapper" >
+  <resultMap id="BaseResultMap" type="com.qczl.model.Cart" >
+    <id column="cid" property="cid" jdbcType="INTEGER" />
+    <result column="gid" property="gid" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="buynum" property="buynum" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cid, gid, username, buynum
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from cart
+    where cid = #{cid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from cart
+    where cid = #{cid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qczl.model.Cart" >
+    insert into cart (cid, gid, username, 
+      buynum)
+    values (#{cid,jdbcType=INTEGER}, #{gid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, 
+      #{buynum,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qczl.model.Cart" >
+    insert into cart
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="gid != null" >
+        gid,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="buynum != null" >
+        buynum,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="gid != null" >
+        #{gid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="buynum != null" >
+        #{buynum,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qczl.model.Cart" >
+    update cart
+    <set >
+      <if test="gid != null" >
+        gid = #{gid,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="buynum != null" >
+        buynum = #{buynum,jdbcType=INTEGER},
+      </if>
+    </set>
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qczl.model.Cart" >
+    update cart
+    set gid = #{gid,jdbcType=INTEGER},
+      username = #{username,jdbcType=VARCHAR},
+      buynum = #{buynum,jdbcType=INTEGER}
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+</mapper>
