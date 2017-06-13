@@ -56,12 +56,15 @@ public class AdminServiceImpl implements IAdminService {
 		}
 		return false;
 	}
-	public boolean updateAdminById(Admin admin) {
+	public Admin updateAdminById(Admin admin) {
 		// TODO Auto-generated method stub
-		if((adminMapper.updateByPrimaryKey(admin))>0){
-			
-		}
-		return false;
+		adminMapper.updateByPrimaryKey(admin);
+		return null;
 	}
+	public Admin findById(Integer id) {
+		// TODO Auto-generated method stub
+		return adminMapper.selectByPrimaryKey(id);
+	}
+	
 
 }

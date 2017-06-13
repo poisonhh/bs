@@ -1,5 +1,7 @@
 package com.qczl.dao;
 
+import java.util.List;
+
 import com.qczl.model.News;
 
 public interface NewsMapper {
@@ -16,4 +18,6 @@ public interface NewsMapper {
     int updateByPrimaryKeyWithBLOBs(News record);
 
     int updateByPrimaryKey(News record);
+
+	List<News> findAllNews();
 }

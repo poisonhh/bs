@@ -6,10 +6,10 @@
 <head >
     <title>无标题页</title>
     <link href="Images/css1/css.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="<%=request.getContextPath() %>/js/jquery.js"></script>
-       <script type="text/javascript" src="<%=request.getContextPath() %>/xheditor/jquery-1.3.2.min.js"></script>
-<link rel="stylesheet" href="<%=request.getContextPath() %>/xheditor/common.css" type="text/css" media="screen" />
-<script type="text/javascript" charset="utf-8" src="<%=request.getContextPath() %>/xheditor/xheditor.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+       <script type="text/javascript" src="../xheditor/jquery-1.3.2.min.js"></script>
+<link rel="stylesheet" href="../xheditor/common.css" type="text/css" media="screen" />
+<script type="text/javascript" charset="gbk" src="../xheditor/xheditor.js"></script>
     <script>
 	function checkmadd(){
 		var title = $("#title").attr("value");
@@ -34,7 +34,7 @@ border="0">
     </tr>
     <tr>
       <td height="23" align="center" class="td_bg"><p>&nbsp;</p>
-	     <form action="/aboutupdate_admin" method="post"  onsubmit="return checkmadd();">
+	     <form action="aboutupdate_admin" method="post"  onsubmit="return checkmadd();">
 	    
         <table width="700" border="0" cellpadding="1" cellspacing="1" bgcolor="#E4F1FA">
 
@@ -46,7 +46,7 @@ border="0">
         </tr>
          
          <tr>
-          <td width="133" height="40" align="right" bgcolor="#FFFFFF">名称：</td>
+          <td width="133" height="40" align="right" bgcolor="#FFFFFF">内容：</td>
           <td width="460" align="left" bgcolor="#FFFFFF"><label>
        
             <script type="text/javascript">

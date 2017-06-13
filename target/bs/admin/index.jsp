@@ -133,12 +133,12 @@ function CheckForm()
 		<form name="form1" method="post" action="adminlogin_admin" onSubmit="return CheckForm();">
     <table width="677" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:50px">
   <tr>
-    <td width="352" height="259" align="center" valign="bottom" background="<%=request.getContextPath() %>/Images/login_1.gif"><table width="90%" border="0" cellspacing="3" cellpadding="0">
+    <td width="352" height="259" align="center" valign="bottom" background="../admin/Images/login_1.gif"><table width="90%" border="0" cellspacing="3" cellpadding="0">
       <tr>
         <td align="right" valign="bottom" style="color:#05B8E4">&nbsp;</td>
       </tr>
     </table></td>
-    <td width="193" background="<%=request.getContextPath() %>/Images/login_2.gif" style="width: 188px">
+    <td width="193" background="../admin/Images/login_2.gif" style="width: 188px">
 
 	<table width="190" height="106" border="0" align="center" cellpadding="2" cellspacing="0">
 
@@ -164,10 +164,10 @@ function CheckForm()
     </table>
 
 	</td>
-    <td width="132" background="<%=request.getContextPath() %>/Images/login_3.gif">&nbsp;</td>
+    <td width="132" background="../admin/Images/login_3.gif">&nbsp;</td>
   </tr>
   <tr>
-    <td height="161" colspan="3" background="<%=request.getContextPath() %>/Images/login_4.gif"></td>
+    <td height="161" colspan="3" background="../admin/Images/login_4.gif"></td>
   </tr>
 </table>
  </form>

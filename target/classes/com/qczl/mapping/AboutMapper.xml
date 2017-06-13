@@ -77,7 +77,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qczl.model.About" >
     update about
-    set title = #{title,jdbcType=VARCHAR}
+    set title = #{title,jdbcType=VARCHAR},
+        content = #{content,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

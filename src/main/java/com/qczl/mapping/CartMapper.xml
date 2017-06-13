@@ -3,9 +3,9 @@
 <mapper namespace="com.qczl.dao.CartMapper" >
   <resultMap id="BaseResultMap" type="com.qczl.model.Cart" >
     <id column="cid" property="cid" jdbcType="INTEGER" />
-    <result column="gid" property="gid" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="buynum" property="buynum" jdbcType="INTEGER" />
+    <association property="goods" column="gid" select="getGoods"></association>
   </resultMap>
   <sql id="Base_Column_List" >
     cid, gid, username, buynum
@@ -79,4 +79,10 @@
       buynum = #{buynum,jdbcType=INTEGER}
     where cid = #{cid,jdbcType=INTEGER}
   </update>
+  <select id="getGoods" parameterType="int" resultType="com.qczl.model.Goods">
+  	select g.name,g.price,g.picurl from goods g where g.gid=#{gid}
+  </select>
+  <select id="findAllByUsername" resultType="com.qczl.model.Cart" resultMap="BaseResultMap">
+   select * from cart
+  </select>
 </mapper>

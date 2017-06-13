@@ -1,7 +1,5 @@
 package com.qczl.model;
 
-import java.util.Date;
-
 public class Car {
     private Integer id;
 
@@ -11,15 +9,11 @@ public class Car {
 
     private String model;
 
-    private Double rentPrice;
+    private Integer carnumber;
 
-    private Integer storeNumber;
+    private String buytime;
 
-    private Integer carNumber;
-
-    private Date buyTime;
-
-    private String carDetail;
+    private String cardetail;
 
     public Integer getId() {
         return id;
@@ -53,51 +47,27 @@ public class Car {
         this.model = model;
     }
 
-    public Double getRentPrice() {
-        return rentPrice;
+    public Integer getCarnumber() {
+        return carnumber;
     }
 
-    public void setRentPrice(Double rentPrice) {
-        this.rentPrice = rentPrice;
+    public void setCarnumber(Integer carnumber) {
+        this.carnumber = carnumber;
     }
 
-    public Integer getStoreNumber() {
-        return storeNumber;
+    public String getBuytime() {
+        return buytime;
     }
 
-    public void setStoreNumber(Integer storeNumber) {
-        this.storeNumber = storeNumber;
+    public void setBuytime(String buytime) {
+        this.buytime = buytime;
     }
 
-    public Integer getCarNumber() {
-        return carNumber;
+    public String getCardetail() {
+        return cardetail;
     }
 
-    public void setCarNumber(Integer carNumber) {
-        this.carNumber = carNumber;
+    public void setCardetail(String cardetail) {
+        this.cardetail = cardetail;
     }
-
-    public Date getBuyTime() {
-        return buyTime;
-    }
-
-    public void setBuyTime(Date buyTime) {
-        this.buyTime = buyTime;
-    }
-
-    public String getCarDetail() {
-        return carDetail;
-    }
-
-    public void setCarDetail(String carDetail) {
-        this.carDetail = carDetail;
-    }
-
-	@Override
-	public String toString() {
-		return "Car [id=" + id + ", color=" + color + ", brand=" + brand + ", model=" + model + ", rentPrice="
-				+ rentPrice + ", storeNumber=" + storeNumber + ", carNumber=" + carNumber + ", buyTime=" + buyTime
-				+ ", carDetail=" + carDetail + "]";
-	}
-    
 }

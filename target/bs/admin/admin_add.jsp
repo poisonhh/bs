@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head >
     <title>无标题页</title>
-    <link href="Images/css1/css.css" rel="stylesheet" type="text/css">
+    <link href="../admin/Images/css1/css.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="<%=request.getContextPath() %>/js/jquery.js"></script>
     <script>
 	function checkmadd(){
@@ -34,17 +34,17 @@ border="0">
     </tr>
     <tr>
       <td height="23" align="center" class="td_bg"><p>&nbsp;</p>
-	     <form action="/adminadd_admin" method="post"  onsubmit="return checkmadd();">
+	     <form action="adminadd_admin" method="post" onsubmit="return checkmadd();">
         <table width="600" border="0" cellpadding="1" cellspacing="1" bgcolor="#E4F1FA">
         <tr>
           <td width="133" height="40" align="right" bgcolor="#FFFFFF">用户名：</td>
           <td width="460" align="left" bgcolor="#FFFFFF"><label>
-            <input type="text" name="mvo.username" id="name" class="inputcss" />
+            <input type="text" name="username" id="name" class="inputcss" />
           </label></td>
         </tr>
         <tr>
           <td height="40" align="right" bgcolor="#FFFFFF">密码：</td>
-          <td align="left" bgcolor="#FFFFFF"><input type="text" name="mvo.password" id="pass" class="inputcss" /></td>
+          <td align="left" bgcolor="#FFFFFF"><input type="text" name="password" id="pass" class="inputcss" /></td>
         </tr>
         <tr>
           <td height="40" align="right" bgcolor="#FFFFFF">&nbsp;</td>

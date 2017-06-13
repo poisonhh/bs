@@ -142,25 +142,25 @@ function CheckForm()
 
 	<table width="190" height="106" border="0" align="center" cellpadding="2" cellspacing="0">
 
-            <tr>
-              <td height="50" colspan="2" align="center"></td>
-            </tr>
-      
-            <tr>
-              <td width="60" height="30" align="left">登陆名称</td>
-              <td style="width: 144px"><input type="text" name="username"  id="user" style=" width:100px; height:20px; border:1px solid #CCCCCC;"/></td>
-            </tr>
-            <tr>
-              <td align="left" style="height: 34px">登陆密码</td>
-              <td style="height: 34px; width: 144px;">
-                  <input type="password" name="password" id="Pass"  style=" width:100px; height:20px; border:1px solid #CCCCCC;"/></td>
-            </tr>
-            
-          <tr>
-              <td colspan="2" align="center">
-                <input name="Submit" type="submit" value="登录"/></td>
-            <tr>
-              <td height="5" colspan="2"></td>
+         <tr>
+           <td height="50" colspan="2" align="center"></td>
+         </tr>
+   
+         <tr>
+           <td width="60" height="30" align="left">登陆名称</td>
+           <td style="width: 144px"><input type="text" name="username"  id="user" style=" width:100px; height:20px; border:1px solid #CCCCCC;"/></td>
+         </tr>
+         <tr>
+           <td align="left" style="height: 34px">登陆密码</td>
+           <td style="height: 34px; width: 144px;">
+               <input type="password" name="password" id="Pass"  style=" width:100px; height:20px; border:1px solid #CCCCCC;"/></td>
+         </tr>
+         
+       <tr>
+           <td colspan="2" align="center">
+             <input name="Submit" type="submit" value="登录"/></td>
+         <tr>
+           <td height="5" colspan="2"></td>
     </table>
 
 	</td>

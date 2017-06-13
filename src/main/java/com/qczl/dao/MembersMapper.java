@@ -18,4 +18,6 @@ public interface MembersMapper {
     int updateByPrimaryKey(Members record);
 
 	List<Members> queryAllMembers();
+
+	Members loginCheck(Members member);
 }

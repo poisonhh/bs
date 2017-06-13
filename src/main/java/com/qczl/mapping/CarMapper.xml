@@ -6,14 +6,12 @@
     <result column="color" property="color" jdbcType="VARCHAR" />
     <result column="brand" property="brand" jdbcType="VARCHAR" />
     <result column="model" property="model" jdbcType="VARCHAR" />
-    <result column="rent_price" property="rentPrice" jdbcType="DOUBLE" />
-    <result column="store_number" property="storeNumber" jdbcType="INTEGER" />
-    <result column="car_number" property="carNumber" jdbcType="INTEGER" />
-    <result column="buy_time" property="buyTime" jdbcType="TIMESTAMP" />
-    <result column="car_detail" property="carDetail" jdbcType="VARCHAR" />
+    <result column="carnumber" property="carnumber" jdbcType="INTEGER" />
+    <result column="buytime" property="buytime" jdbcType="VARCHAR" />
+    <result column="cardetail" property="cardetail" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, color, brand, model, rent_price, store_number, car_number, buy_time, car_detail
+    id, color, brand, model, carnumber, buytime, cardetail
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -27,13 +25,11 @@
   </delete>
   <insert id="insert" parameterType="com.qczl.model.Car" >
     insert into car (id, color, brand, 
-      model, rent_price, store_number, 
-      car_number, buy_time, car_detail
-      )
+      model, carnumber, buytime, 
+      cardetail)
     values (#{id,jdbcType=INTEGER}, #{color,jdbcType=VARCHAR}, #{brand,jdbcType=VARCHAR}, 
-      #{model,jdbcType=VARCHAR}, #{rentPrice,jdbcType=DOUBLE}, #{storeNumber,jdbcType=INTEGER}, 
-      #{carNumber,jdbcType=INTEGER}, #{buyTime,jdbcType=TIMESTAMP}, #{carDetail,jdbcType=VARCHAR}
-      )
+      #{model,jdbcType=VARCHAR}, #{carnumber,jdbcType=INTEGER}, #{buytime,jdbcType=VARCHAR}, 
+      #{cardetail,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qczl.model.Car" >
     insert into car
@@ -50,20 +46,14 @@
       <if test="model != null" >
         model,
       </if>
-      <if test="rentPrice != null" >
-        rent_price,
+      <if test="carnumber != null" >
+        carnumber,
       </if>
-      <if test="storeNumber != null" >
-        store_number,
+      <if test="buytime != null" >
+        buytime,
       </if>
-      <if test="carNumber != null" >
-        car_number,
-      </if>
-      <if test="buyTime != null" >
-        buy_time,
-      </if>
-      <if test="carDetail != null" >
-        car_detail,
+      <if test="cardetail != null" >
+        cardetail,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -79,20 +69,14 @@
       <if test="model != null" >
         #{model,jdbcType=VARCHAR},
       </if>
-      <if test="rentPrice != null" >
-        #{rentPrice,jdbcType=DOUBLE},
+      <if test="carnumber != null" >
+        #{carnumber,jdbcType=INTEGER},
       </if>
-      <if test="storeNumber != null" >
-        #{storeNumber,jdbcType=INTEGER},
+      <if test="buytime != null" >
+        #{buytime,jdbcType=VARCHAR},
       </if>
-      <if test="carNumber != null" >
-        #{carNumber,jdbcType=INTEGER},
-      </if>
-      <if test="buyTime != null" >
-        #{buyTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="carDetail != null" >
-        #{carDetail,jdbcType=VARCHAR},
+      <if test="cardetail != null" >
+        #{cardetail,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -108,20 +92,14 @@
       <if test="model != null" >
         model = #{model,jdbcType=VARCHAR},
       </if>
-      <if test="rentPrice != null" >
-        rent_price = #{rentPrice,jdbcType=DOUBLE},
+      <if test="carnumber != null" >
+        carnumber = #{carnumber,jdbcType=INTEGER},
       </if>
-      <if test="storeNumber != null" >
-        store_number = #{storeNumber,jdbcType=INTEGER},
+      <if test="buytime != null" >
+        buytime = #{buytime,jdbcType=VARCHAR},
       </if>
-      <if test="carNumber != null" >
-        car_number = #{carNumber,jdbcType=INTEGER},
-      </if>
-      <if test="buyTime != null" >
-        buy_time = #{buyTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="carDetail != null" >
-        car_detail = #{carDetail,jdbcType=VARCHAR},
+      <if test="cardetail != null" >
+        cardetail = #{cardetail,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -131,11 +109,12 @@
     set color = #{color,jdbcType=VARCHAR},
       brand = #{brand,jdbcType=VARCHAR},
       model = #{model,jdbcType=VARCHAR},
-      rent_price = #{rentPrice,jdbcType=DOUBLE},
-      store_number = #{storeNumber,jdbcType=INTEGER},
-      car_number = #{carNumber,jdbcType=INTEGER},
-      buy_time = #{buyTime,jdbcType=TIMESTAMP},
-      car_detail = #{carDetail,jdbcType=VARCHAR}
+      carnumber = #{carnumber,jdbcType=INTEGER},
+      buytime = #{buytime,jdbcType=VARCHAR},
+      cardetail = #{cardetail,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+   <select id="queryAllCar" resultType="com.qczl.model.Car" resultMap="BaseResultMap">
+  	select * from car
+  </select>
 </mapper>

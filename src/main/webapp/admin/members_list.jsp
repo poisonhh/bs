@@ -44,7 +44,7 @@ border="0">
           <td align="center" bgcolor="#FFFFFF">&nbsp;${obj.idcard}</td>
           <td align="center" bgcolor="#FFFFFF">&nbsp;${obj.licensenumber}</td>
           <td align="center" bgcolor="#FFFFFF">
-          <a href="membersdelete_admin?par.id=${obj.id }" onClick="return confirm('确定删除吗？')">删除</a>
+          <a href="membersdelete_admin/${obj.id }" onClick="return confirm('确定删除吗？')">删除</a>
           </td>
         </tr>
 		</c:forEach>

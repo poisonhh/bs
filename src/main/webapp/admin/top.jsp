@@ -18,14 +18,14 @@
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="194" height="60" align="center" background="../admin/Images/top_logo.jpg"></td>
-    <td align="center" style="background:url(Images/top_bg.jpg) no-repeat"><table cellspacing="0" cellpadding="0" border="0" width="100%" height="33">
+    <td align="center" style="background:url(../admin/Images/top_bg.jpg) no-repeat"><table cellspacing="0" cellpadding="0" border="0" width="100%" height="33">
       <tbody>
         <tr>
           <td width="30" align="left"><img onClick="switchBar(this)" height="15" alt="关闭左边管理菜单" src="../admin/Images/on-of.gif" width="15" border="0" /></td>
           <td width="320" align="left"><a class="top_link"  href="#" target="main"></a>&nbsp;&nbsp;欢迎  <%
 	if(request.getSession().getAttribute("admin") != null){
 		%>
-			    管理员：&nbsp;&nbsp;${username }
+			    管理员：&nbsp;&nbsp;${admin.username }
                               
 		<%
 		

@@ -141,4 +141,7 @@
   <select id="queryAllMembers" resultType="com.qczl.model.Members">
   	select * from members
   </select>
+  <select id="loginCheck" resultType="com.qczl.model.Members" resultMap="BaseResultMap">
+  	select * from members where username=#{username,jdbcType=VARCHAR} and password=#{password,jdbcType=VARCHAR}
+  </select>
 </mapper>

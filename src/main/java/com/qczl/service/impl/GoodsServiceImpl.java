@@ -20,12 +20,6 @@ public class GoodsServiceImpl implements IGoodsSercice {
 	public void setGoodsMapper(GoodsMapper goodsMapper) {
 		this.goodsMapper = goodsMapper;
 	}
-
-	public List<Goods> queryAllGoods() {
-		// TODO Auto-generated method stub
-		List<Goods> listGoods = goodsMapper.queryAllGoods();
-		return listGoods;
-	}
 	public boolean deleteGoods(Integer gid) {
 		// TODO Auto-generated method stub
 		if(goodsMapper.deleteByPrimaryKey(gid)>0){
@@ -33,5 +27,26 @@ public class GoodsServiceImpl implements IGoodsSercice {
 		}
 		return false;
 	}
+	public List<Goods> queryAllGoods(){
+		// TODO Auto-generated method stub
+		List<Goods> listGoods = goodsMapper.queryAllGoods();
+		return listGoods;
+	}
+	public Goods findById(Integer id) {
+		// TODO Auto-generated method stub
+		return goodsMapper.selectByPrimaryKey(id);
+	}
+	public boolean addGoods(Goods goods) {
+		// TODO Auto-generated method stub
+		if(goodsMapper.insertSelective(goods)>0){
+			return true;
+		}
+		return false;
+	}
+	public void updateById(Goods goods) {
+		// TODO Auto-generated method stub
+		goodsMapper.updateByPrimaryKeySelective(goods);
+	}
+	
 
 }

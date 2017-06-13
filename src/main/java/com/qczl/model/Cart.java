@@ -3,11 +3,13 @@ package com.qczl.model;
 public class Cart {
     private Integer cid;
 
-    private Integer gid;
+    private Goods goods;
 
     private String username;
 
     private Integer buynum;
+    
+    private Integer gid;
 
     public Integer getCid() {
         return cid;
@@ -17,15 +19,16 @@ public class Cart {
         this.cid = cid;
     }
 
-    public Integer getGid() {
-        return gid;
-    }
+   
+    public Goods getGoods() {
+		return goods;
+	}
 
-    public void setGid(Integer gid) {
-        this.gid = gid;
-    }
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
 
-    public String getUsername() {
+	public String getUsername() {
         return username;
     }
 
@@ -41,9 +44,12 @@ public class Cart {
         this.buynum = buynum;
     }
 
-	@Override
-	public String toString() {
-		return "Cart [cid=" + cid + ", gid=" + gid + ", username=" + username + ", buynum=" + buynum + "]";
+	public Integer getGid() {
+		return gid;
+	}
+
+	public void setGid(Integer gid) {
+		this.gid = gid;
 	}
     
 }

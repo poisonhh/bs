@@ -1,0 +1,55 @@
+body{ background:url(images/allbg.jpg); font-size:12px; margin-top:0px; margin-bottom:0px;  }
+.top{ background:url(images/banner.jpg) no-repeat;}
+
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+
+.top a{ font-size:14px; color: #000000}
+.login{ width:120px; height:17px;}
+.abc{ background:url(images/list.gif) no-repeat; }
+.abctop{ height:31px; font-size:14px; font-weight:bold;}
+.ul{ margin:0; margin-top:10px; margin-left:15px; padding:0px; }
+.ul li{ width:230px; height:14px; padding-top:16px; list-style:none; border-bottom:1px dotted #999999;}
+
+/* Ωπµ„Õº begin */
+.FocusPic{width:750;height:250px;position:relative;zoom:1;overflow:hidden;}
+
+.FocusPic .FP_arr_left{width:43px;height:125px;position:absolute;z-index:8;top:80px;left:100px;background:url(images/left.gif) no-repeat 0 0;filter:Alpha(Opacity=80);opacity:.8;cursor:pointer;}
+.FocusPic .FP_arr_right{width:43px;height:125px;position:absolute;z-index:8;top:80px;right:100px;background:url(images/right.gif) no-repeat;filter:Alpha(Opacity=80);opacity:.8;cursor:pointer;}
+.FocusPic .FP_pic{width:750px;height:250px;overflow:hidden;float:left;}
+/* Ωπµ„Õº end */
+
+.tab{ border-collapse:collapse;border:1px solid #C6B9B9;}
+.tab th{ height:26px;border:1px solid #C6B9B9;text-align:center; background: url(images/td.jpg) repeat-x; font-size:12px;}
+
+.tab td{ height:30px; border:1px solid #C6B9B9; text-align:center;font-size:12px;}
+
+
+.tababc{ border:none;}
+.tababc th{border:none; }
+
+.tababc td{ border:none;}
+.tabs{ border-collapse:collapse;border:1px solid #C6B9B9;}
+.tabs td{ height:30px; border:1px solid #C6B9B9; font-size:12px;}
+
+.subject{ font-size:18px; font-weight:bold; text-align: center;}
+.message{ font-size:14px; line-height:150%; text-align:left;}
+
+ .img{border:1px solid #CCCCCC; padding:2px 2px 2px 2px; }
+ 
+ .dtitle{ font-size:16px; font-weight: bold;}
+ .dcontent{ font-size:14px; line-height:150%;}
+ .bdoot{ border-bottom:1px dotted #CCCCCC;}
+ .white{ font-size:14px; color:#FFFFFF;}
+ 
+ .search{ width:100px; height:18px;}

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qczl.dao.OdersMapper">
+	<resultMap id="BaseResultMap" type="com.qczl.model.Oders">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="orderid" property="orderid" jdbcType="VARCHAR" />
+		
+		<!--  <result column="gid" property="orderid" jdbcType="INTEGER" />-->
+		<result column="buynum" property="buynum" jdbcType="INTEGER" />
+		<result column="addtime" property="addtime" jdbcType="VARCHAR" />
+		<result column="username" property="username" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="postcode" property="postcode" jdbcType="VARCHAR" />
+		<result column="addr" property="addr" jdbcType="VARCHAR" />
+		<result column="phone" property="phone" jdbcType="VARCHAR" />
+		<result column="flag" property="flag" jdbcType="INTEGER" />
+		<association property="goods" column="gid" select="getGoods"/>
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, orderid, gid, buynum, addtime, username, name, postcode, addr, phone,
+		flag
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from oders
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from oders
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.qczl.model.Oders">
+		insert into oders (id, orderid, gid,
+		buynum, addtime, username,
+		name, postcode, addr,
+		phone, flag)
+		values (#{id,jdbcType=INTEGER}, #{orderid,jdbcType=VARCHAR},
+		#{gid,jdbcType=INTEGER},
+		#{buynum,jdbcType=INTEGER}, #{addtime,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},
+		#{name,jdbcType=VARCHAR}, #{postcode,jdbcType=VARCHAR},
+		#{addr,jdbcType=VARCHAR},
+		#{phone,jdbcType=VARCHAR}, #{flag,jdbcType=INTEGER})
+	</insert>
+	<insert id="insertSelective" parameterType="com.qczl.model.Oders">
+		insert into oders
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="orderid != null">
+				orderid,
+			</if>
+			<if test="gid != null">
+				gid,
+			</if>
+			<if test="buynum != null">
+				buynum,
+			</if>
+			<if test="addtime != null">
+				addtime,
+			</if>
+			<if test="username != null">
+				username,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="postcode != null">
+				postcode,
+			</if>
+			<if test="addr != null">
+				addr,
+			</if>
+			<if test="phone != null">
+				phone,
+			</if>
+			<if test="flag != null">
+				flag,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="orderid != null">
+				#{orderid,jdbcType=VARCHAR},
+			</if>
+			<if test="gid != null">
+				#{gid,jdbcType=INTEGER},
+			</if>
+			<if test="buynum != null">
+				#{buynum,jdbcType=INTEGER},
+			</if>
+			<if test="addtime != null">
+				#{addtime,jdbcType=VARCHAR},
+			</if>
+			<if test="username != null">
+				#{username,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="postcode != null">
+				#{postcode,jdbcType=VARCHAR},
+			</if>
+			<if test="addr != null">
+				#{addr,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+				#{phone,jdbcType=VARCHAR},
+			</if>
+			<if test="flag != null">
+				#{flag,jdbcType=INTEGER},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.qczl.model.Oders">
+		update oders
+		<set>
+			<if test="orderid != null">
+				orderid = #{orderid,jdbcType=VARCHAR},
+			</if>
+			<if test="gid != null">
+				gid = #{gid,jdbcType=INTEGER},
+			</if>
+			<if test="buynum != null">
+				buynum = #{buynum,jdbcType=INTEGER},
+			</if>
+			<if test="addtime != null">
+				addtime = #{addtime,jdbcType=VARCHAR},
+			</if>
+			<if test="username != null">
+				username = #{username,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="postcode != null">
+				postcode = #{postcode,jdbcType=VARCHAR},
+			</if>
+			<if test="addr != null">
+				addr = #{addr,jdbcType=VARCHAR},
+			</if>
+			<if test="phone != null">
+				phone = #{phone,jdbcType=VARCHAR},
+			</if>
+			<if test="flag != null">
+				flag = #{flag,jdbcType=INTEGER},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.qczl.model.Oders">
+		update oders
+		set orderid = #{orderid,jdbcType=VARCHAR},
+		gid = #{gid,jdbcType=INTEGER},
+		buynum = #{buynum,jdbcType=INTEGER},
+		addtime = #{addtime,jdbcType=VARCHAR},
+		username = #{username,jdbcType=VARCHAR},
+		name = #{name,jdbcType=VARCHAR},
+		postcode = #{postcode,jdbcType=VARCHAR},
+		addr = #{addr,jdbcType=VARCHAR},
+		phone = #{phone,jdbcType=VARCHAR},
+		flag = #{flag,jdbcType=INTEGER}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<select id="findAllOdersByUsername" resultType="com.qczl.model.Oders"
+		resultMap="BaseResultMap">
+		select * from oders
+	</select>
+	<select id="findAll"  resultType="com.qczl.model.Oders" resultMap="BaseResultMap">
+		select * from oders
+	</select>
+	<select id="getGoods" parameterType="int" resultType="com.qczl.model.Goods">
+		select g.name,g.price from goods g where g.gid=#{gid}
+	</select>
+	<update id="updateFlagById" parameterType="int" >
+		update oders set flag='1' where id=#{id}
+	</update>
+	<update id="updateqFlagById" parameterType="int">
+		update oders set flag='2' where id=#{id}
+	</update>
+</mapper>

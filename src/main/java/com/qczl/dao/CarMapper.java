@@ -1,5 +1,7 @@
 package com.qczl.dao;
 
+import java.util.List;
+
 import com.qczl.model.Car;
 
 public interface CarMapper {
@@ -14,4 +16,6 @@ public interface CarMapper {
     int updateByPrimaryKeySelective(Car record);
 
     int updateByPrimaryKey(Car record);
+
+	List<Car> queryAllCar();
 }

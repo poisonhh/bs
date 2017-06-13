@@ -1,9 +1,14 @@
-<%@ page language="java" import="java.util.*" pageEncoding="GB2312"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<%
+      String path = request.getContextPath();
+      String basePath = request.getScheme() + "://"
+                  + request.getServerName() + ":" + request.getServerPort()
+                  + path + "/";
+%>
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Œﬁ±ÍÃ‚“≥</title>
+    <title>Êó†Ê†áÈ¢òÈ°µ</title>
     <link href="Images/css1/left_css.css" rel="stylesheet" type="text/css">
     <SCRIPT language=JavaScript>
 function showsubmenu(sid)
@@ -23,44 +28,47 @@ eval("submenu" + sid + ".style.display=\"none\";");
 <body  bgcolor="16ACFF">
     <form id="form1" runat="server">
     <div>
-    <table width="98%" border="0" cellpadding="0" cellspacing="0" background="Images/tablemde.jpg">
+    <table width="98%" border="0" cellpadding="0" cellspacing="0" background="../admin/Images/tablemde.jpg">
   <tr>
-    <td height="5" background="Images/tableline_top.jpg" bgcolor="#16ACFF"></td>
+    <td height="5" background="../admin/Images/tableline_top.jpg" bgcolor="#16ACFF"></td>
   </tr>
   <tr>
     <td><TABLE width="97%" 
 border=0 align=right cellPadding=0 cellSpacing=0 class=leftframetable>
       <TBODY>
-      <%
-	if(request.getSession().getAttribute("ADMIN") != null){
-		%>
+       
+      <%--
+	if(request.getSession().getAttribute("admin") != null){
+		--%>
+		
         <TR>
-          <TD height="25" style="background:url(Images/left_tt.gif) no-repeat">
+          <TD height="25" style="background:url(../admin/Images/left_tt.gif) no-repeat">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <TD width="20"></TD>
-          <TD class=STYLE1 style="CURSOR: hand" onclick=showsubmenu(1); height=25>”√ªßπ‹¿Ì</TD>
+          <TD class=STYLE1 style="CURSOR: hand" onclick=showsubmenu(1); height=25>Áî®Êà∑ÁÆ°ÁêÜ</TD>
               </tr>
-            </table>            </TD>
+            </table>
+		</TD>
           </TR>
         <TR>
           <TD><TABLE id=submenu1 cellSpacing=0 cellPadding=0 width="100%" border=0>
               <TBODY>
                 <TR>
-                  <TD width="2%"><IMG src="Images/closed.gif"></TD>
-                  <TD height=23><A href="admintoadd_admin" 
-            target=main>¬º»Îπ‹¿Ì‘±</A></TD>
+                  <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
+                  <TD height=23><A href="adminadd_admin" 
+            target=main>ÂΩïÂÖ•ÁÆ°ÁêÜÂëò</A></TD>
                 </TR>
                 <TR>
-                  <TD><IMG src="Images/closed.gif"></TD>
+                  <TD><IMG src="../admin/Images/closed.gif"></TD>
                   <TD height=23><A href="adminlist_admin" 
-            target=main>π‹¿Ì‘±Œ¨ª§</A></TD>
+            target=main>ÁÆ°ÁêÜÂëòÁª¥Êä§</A></TD>
                 </TR>
          
                    <TR>
-                  <TD><IMG src="Images/closed.gif"></TD>
+                  <TD><IMG src="../admin/Images/closed.gif"></TD>
                   <TD height=23><A href="memberslist_admin" 
-            target=main>”√ªßπ‹¿Ì</A></TD>
+            target=main>Áî®Êà∑ÁÆ°ÁêÜ</A></TD>
                 </TR>
          
        
@@ -72,24 +80,24 @@ border=0 align=right cellPadding=0 cellSpacing=0 class=leftframetable>
     </TABLE></td>
   </tr>
 <tr>
-    <td height="5" background="Images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
+    <td height="5" background="../admin/Images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
   </tr>
   
  
  
   <tr>
-    <td height="5" background="Images/tableline_top.jpg" bgcolor="#9BC2ED"></td>
+    <td height="5" background="../admin/Images/tableline_top.jpg" bgcolor="#9BC2ED"></td>
   </tr>
   <tr>
     <td><TABLE class=leftframetable cellSpacing=0 cellPadding=0 width="97%" align=right 
 border=0>
       <TBODY>
         <TR>
-          <TD height="25" style="background:url(Images/left_tt.gif) no-repeat"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <TD height="25" style="background:url(../admin/Images/left_tt.gif) no-repeat"><table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <TD width="20"></TD>
           <TD class=STYLE1 style="CURSOR: hand" onclick=showsubmenu(4); 
-    height=25>–¬Œ≈π‹¿Ì</TD>
+    height=25>Êñ∞ÈóªÁÆ°ÁêÜ</TD>
             </tr>
           </table></TD>
           </TR>
@@ -97,15 +105,15 @@ border=0>
           <TD><TABLE id=submenu4 cellSpacing=0 cellPadding=0 width="100%" border=0>
               <TBODY>
                       <TR>
-                  <TD width="2%"><IMG src="Images/closed.gif"></TD>
-                  <TD height=23><A href="newstoadd_admin" 
-            target=main>ÃÌº”–¬Œ≈</A> </TD>
+                  <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
+                  <TD height=23><A href="newsadd_admin" 
+            target=main>Ê∑ªÂä†Êñ∞Èóª</A> </TD>
                 </TR>
                    
                      <TR>
-                  <TD width="2%"><IMG src="Images/closed.gif"></TD>
+                  <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
                   <TD height=23><A href="newslist_admin" 
-            target=main>–¬Œ≈π‹¿Ì</A> </TD>
+            target=main>Êñ∞ÈóªÁÆ°ÁêÜ</A> </TD>
                 </TR>
               
               </TBODY>
@@ -115,23 +123,23 @@ border=0>
     </TABLE></td>
   </tr>
   <tr>
-    <td height="5" background="Images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
+    <td height="5" background="../admin/Images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
   </tr>
  
   
       <tr>
-    <td height="5" background="Images/tableline_top.jpg" bgcolor="#9BC2ED"></td>
+    <td height="5" background="../admin/Images/tableline_top.jpg" bgcolor="#9BC2ED"></td>
   </tr>
   <tr>
     <td><TABLE class=leftframetable cellSpacing=0 cellPadding=0 width="97%" align=right 
 border=0>
       <TBODY>
         <TR>
-          <TD height="25" style="background:url(Images/left_tt.gif) no-repeat"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <TD height="25" style="background:url(../admin/Images/left_tt.gif) no-repeat"><table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <TD width="20"></TD>
           <TD class=STYLE1 style="CURSOR: hand" onclick=showsubmenu(5); 
-    height=25>≥µ¡æπ‹¿Ì</TD>
+    height=25>ËΩ¶ËæÜÁÆ°ÁêÜ</TD>
             </tr>
           </table></TD>
           </TR>
@@ -139,27 +147,27 @@ border=0>
           <TD><TABLE id=submenu5 cellSpacing=0 cellPadding=0 width="100%" border=0>
               <TBODY>
                       <TR>
-                  <TD width="2%"><IMG src="Images/closed.gif"></TD>
-                  <TD height=23><A href="cattoadd_admin" 
-            target=main>ÃÌº”¿‡±</A> </TD>
+                  <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
+                  <TD height=23><A href="caradd_admin" 
+            target=main>Ê∑ªÂä†Á±ªÂà´</A> </TD>
                 </TR>
                    
                      <TR>
-                  <TD width="2%"><IMG src="Images/closed.gif"></TD>
+                  <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
                   <TD height=23><A href="catlist_admin" 
-            target=main>¿‡±π‹¿Ì</A> </TD>
+            target=main>Á±ªÂà´ÁÆ°ÁêÜ</A> </TD>
                 </TR>
                 
                        <TR>
-                  <TD width="2%"><IMG src="Images/closed.gif"></TD>
-                  <TD height=23><A href="goodstoadd_admin" 
-            target=main>≥µ¡æÃÌº”</A> </TD>
+                  <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
+                  <TD height=23><A href="goodsadd_admin" 
+            target=main>ËΩ¶ËæÜÊ∑ªÂä†</A> </TD>
                 </TR>
                 
                                <TR>
-                  <TD width="2%"><IMG src="Images/closed.gif"></TD>
+                  <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
                   <TD height=23><A href="goodslist_admin" 
-            target=main>≥µ¡æπ‹¿Ì</A> </TD>
+            target=main>ËΩ¶ËæÜÁÆ°ÁêÜ</A> </TD>
                 </TR>        
               
               </TBODY>
@@ -169,22 +177,22 @@ border=0>
     </TABLE></td>
   </tr>
   <tr>
-    <td height="5" background="Images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
+    <td height="5" background="../admin/Images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
   </tr>            
             
           <tr>
-    <td height="5" background="Images/tableline_top.jpg" bgcolor="#9BC2ED"></td>
+    <td height="5" background="../admin/Images/tableline_top.jpg" bgcolor="#9BC2ED"></td>
   </tr>
   <tr>
     <td><TABLE class=leftframetable cellSpacing=0 cellPadding=0 width="97%" align=right 
 border=0>
       <TBODY>
         <TR>
-          <TD height="25" style="background:url(Images/left_tt.gif) no-repeat"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <TD height="25" style="background:url(../admin/Images/left_tt.gif) no-repeat"><table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <TD width="20"></TD>
           <TD class=STYLE1 style="CURSOR: hand" onclick=showsubmenu(6); 
-    height=25>∂©µ•π‹¿Ì</TD>
+    height=25>ËÆ¢ÂçïÁÆ°ÁêÜ</TD>
             </tr>
           </table></TD>
           </TR>
@@ -193,9 +201,9 @@ border=0>
               <TBODY>
                             
                      <TR>
-                  <TD width="2%"><IMG src="Images/closed.gif"></TD>
-                  <TD height=23><A href="orderslist_admin" 
-            target=main>∂©µ•π‹¿Ì</A> </TD>
+                  <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
+                  <TD height=23><A href="oderslist_admin" 
+            target=main>ËÆ¢ÂçïÁÆ°ÁêÜ</A> </TD>
                 </TR>
               
               </TBODY>
@@ -205,22 +213,22 @@ border=0>
     </TABLE></td>
   </tr>
   <tr>
-    <td height="5" background="Images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
+    <td height="5" background="../admin/Images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
   </tr>         
             
            <tr>
-    <td height="5" background="Images/tableline_top.jpg" bgcolor="#9BC2ED"></td>
+    <td height="5" background="../admin/Images/tableline_top.jpg" bgcolor="#9BC2ED"></td>
   </tr>
   <tr>
     <td><TABLE class=leftframetable cellSpacing=0 cellPadding=0 width="97%" align=right 
 border=0>
       <TBODY>
         <TR>
-          <TD height="25" style="background:url(Images/left_tt.gif) no-repeat"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <TD height="25" style="background:url(../admin/Images/left_tt.gif) no-repeat"><table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <TD width="20"></TD>
           <TD class=STYLE1 style="CURSOR: hand" onclick=showsubmenu(7); 
-    height=25>¿∏ƒøπ‹¿Ì</TD>
+    height=25>Ê†èÁõÆÁÆ°ÁêÜ</TD>
             </tr>
           </table></TD>
           </TR>
@@ -228,15 +236,15 @@ border=0>
           <TD><TABLE id=submenu7 cellSpacing=0 cellPadding=0 width="100%" border=0>
               <TBODY>
                       <TR>
-                  <TD width="2%"><IMG src="Images/closed.gif"></TD>
-                  <TD height=23><A href="abouttoupdate_admin?mvo.id=2" 
-            target=main>¡™œµŒ“√«</A> </TD>
+                  <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
+                  <TD height=23><A href="abouttoupdate_admin/2" 
+            target=main>ËÅîÁ≥ªÊàë‰ª¨</A> </TD>
                 </TR>
                    
                      <TR>
-                  <TD width="2%"><IMG src="Images/closed.gif"></TD>
+                  <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
                   <TD height=23><A href="abouttoupdate_admin?mvo.id=1" 
-            target=main>πÿ”⁄Œ“√«</A> </TD>
+            target=main>ÂÖ≥‰∫éÊàë‰ª¨</A> </TD>
                 </TR>
               
               </TBODY>
@@ -246,20 +254,20 @@ border=0>
     </TABLE></td>
   </tr>
   <tr>
-    <td height="5" background="Images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
+    <td height="5" background="../admin/Images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
   </tr>         
-                                <%
+                                <%--
                               
 	}
 	
-		%>
+		--%>
                                             
              
       </TBODY>
     </TABLE></td>
   </tr>
   <tr>
-    <td height="5" background="Images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
+    <td height="5" background="../admin/Images/tableline_bottom.jpg" bgcolor="#9BC2ED"></td>
   </tr>
 </table>
     </div>

@@ -1,10 +1,16 @@
-<%@ page language="java" import="java.util.*" pageEncoding="GB2312"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%
+      String path = request.getContextPath();
+      String basePath = request.getScheme() + "://"
+                  + request.getServerName() + ":" + request.getServerPort()
+                  + path + "/";
+%>
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>ÎŞ±êÌâÒ³</title>
+    <title>æ— æ ‡é¢˜é¡µ</title>
     <link href="Images/css1/css.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -15,24 +21,24 @@
 border="0">
   <tbody>
     <tr>
-      <th class="bg_tr" align="left" height="25">¹ÜÀíÔ±¹ÜÀíÁĞ±í</th>
+      <th class="bg_tr" align="left" height="25">ç®¡ç†å‘˜ç®¡ç†åˆ—è¡¨</th>
     </tr>
     <tr>
       <td height="23" align="center" class="td_bg"><p>&nbsp;</p>
       <table width="98%" border="0" cellpadding="1" cellspacing="1" bgcolor="#3498DA" >
         <tr>
           <td width="76" align="center" bgcolor="#FFFFFF">ID</td>
-          <td width="216" align="center" bgcolor="#FFFFFF">ÓÃ»§Ãû</td>
-          <td width="146" align="center" bgcolor="#FFFFFF">ÃÜÂë</td>
-          <td width="149" align="center" bgcolor="#FFFFFF">²Ù×÷</td>
+          <td width="216" align="center" bgcolor="#FFFFFF">ç”¨æˆ·å</td>
+          <td width="146" align="center" bgcolor="#FFFFFF">å¯†ç </td>
+          <td width="149" align="center" bgcolor="#FFFFFF">æ“ä½œ</td>
         </tr>
-		<c:forEach items="${pi.list}" var="obj" varStatus="con">
+		<c:forEach items="${adminList}" var="obj" varStatus="con">
         <tr>
           <td align="center" bgcolor="#FFFFFF">&nbsp;${obj.id }</td>
           <td align="center" bgcolor="#FFFFFF">&nbsp;${obj.username}</td>
           <td align="center" bgcolor="#FFFFFF">&nbsp;${obj.password}</td>
           <td align="center" bgcolor="#FFFFFF">
-          <a href="<%=request.getContextPath() %>/admindelete_admin?mvo.id=${obj.id }" onClick="return confirm('È·¶¨É¾³ıÂğ£¿')">É¾³ı</a>&nbsp;&nbsp;<a href="admintoupdate_admin?mvo.id=${obj.id }">ĞŞ¸Ä</a>
+          <a href="admindelete_admin/${obj.id }" onClick="return confirm('ç¡®å®šåˆ é™¤å—ï¼Ÿ')">åˆ é™¤</a>&nbsp;&nbsp;<a href="adminupdate_admin/${obj.id}">ä¿®æ”¹</a>
           </td>
         </tr>
 		</c:forEach>

@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>无标题页</title>
-    <link href="../admin/Images/css1/css.css" rel="stylesheet" type="text/css">
+    <link href="Images/css1/css.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <form id="form1" runat="server">
@@ -38,7 +38,7 @@ border="0">
           <td align="center" bgcolor="#FFFFFF">&nbsp;${obj.username}</td>
           <td align="center" bgcolor="#FFFFFF">&nbsp;${obj.password}</td>
           <td align="center" bgcolor="#FFFFFF">
-          <a href="admindelete_admin?admin.id=${obj.id }" onClick="return confirm('确定删除吗？')">删除</a>&nbsp;&nbsp;<a href="admintoupdate_admin?admin.id=${obj.id }">修改</a>
+          <a href="admindelete_admin/${obj.id }" onClick="return confirm('确定删除吗？')">删除</a>&nbsp;&nbsp;<a href="adminupdate_admin/${obj.id}">修改</a>
           </td>
         </tr>
 		</c:forEach>

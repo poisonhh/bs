@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>多媒体编辑器</title>
+<style type="text/css">
+/* <![CDATA[ */
+* {font-size:12px;}
+/* ]]> */
+</style>
+</head>
+
+
+<body>
+<link href="main.css" type="text/css" rel="stylesheet" />
+<script src="HtmlEditor.js"></script>
+
+
+<table cellpadding="2" cellspacing="1" border="0" width="100%">
+
+<tr>
+    <td>原有内容</td>
+    <td>
+		<textarea id="oldContent" rows="5" cols="50"><p id="p1"><i>Now</i> <b>Hello</b> World!</p>你好!</textarea>
+	</td>
+    <td>&lt;--这里是真正要提交保存的内容</td>
+</tr>
+<tr>
+    <td>编辑区</td>
+    <td>
+	<script>
+	// 使用示例
+	//__ImageRoot = ""; // 编辑器JS文件相对于本页的路径
+	//__FileDialogPage = "img.html"; // 上传文件页面相对于当前页的路径
+	__SummaryID = "Summary"; // 要输入摘要的HTML控件ID
+	__SummaryLen = 100; // 摘要的长度
+	__ContentID = "oldContent"; // 内容提取或写入的HTML控件ID
+	HtmlEditor('dd','500','300');
+	</script>
+</td>
+    <td>&lt;--在这里输入新内容</td>
+</tr>
+
+</table>
+
+<button onClick="alert(__EditorValue);">取值</button>
+</body>
+</html>

@@ -9,6 +9,12 @@ public interface IGoodsSercice {
 	List<Goods> queryAllGoods();
 
 	boolean deleteGoods(Integer gid);
+
+	Goods findById(Integer id);
+
+	boolean addGoods(Goods goods);
+
+	void updateById(Goods goods);
 	
 
 }

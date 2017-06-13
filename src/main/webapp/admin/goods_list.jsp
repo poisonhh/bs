@@ -40,7 +40,7 @@ border="0">
           <td align="center" bgcolor="#FFFFFF">&nbsp;${obj.price}</td>
           <td align="center" bgcolor="#FFFFFF">&nbsp;${obj.num}</td>
           <td align="center" bgcolor="#FFFFFF">
-          <a href="goodsdelete_admin?par.id=${obj.gid }" onClick="return confirm('确定删除吗？')">删除</a>&nbsp;&nbsp;<a href="goodstoupdate_admin?mvo.gid=${obj.gid }">修改</a>
+          <a href="goodsdelete_admin/${obj.gid }" onClick="return confirm('确定删除吗？')">删除</a>&nbsp;&nbsp;<a href="goodstoupdate_admin/${obj.gid }">修改</a>
           </td>
         </tr>
 		</c:forEach>

@@ -16,6 +16,8 @@ public interface IAdminService {
 
 	public boolean deleteById(Integer id);
 
-	public boolean updateAdminById(Admin admin);
+	public Admin updateAdminById(Admin admin);
+
+	public Admin findById(Integer id);
 	
 }

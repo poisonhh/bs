@@ -56,7 +56,7 @@ border=0 align=right cellPadding=0 cellSpacing=0 class=leftframetable>
               <TBODY>
                 <TR>
                   <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
-                  <TD height=23><A href="admintoadd_admin" 
+                  <TD height=23><A href="adminadd_admin" 
             target=main>录入管理员</A></TD>
                 </TR>
                 <TR>
@@ -106,7 +106,7 @@ border=0>
               <TBODY>
                       <TR>
                   <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
-                  <TD height=23><A href="newstoadd_admin" 
+                  <TD height=23><A href="newsadd_admin" 
             target=main>添加新闻</A> </TD>
                 </TR>
                    
@@ -148,26 +148,26 @@ border=0>
               <TBODY>
                       <TR>
                   <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
-                  <TD height=23><A href="cattoadd_admin" 
-            target=main>添加类别</A> </TD>
+                  <TD height=23><A href="caradd_admin" 
+            target=main>车辆录入</A> </TD>
                 </TR>
                    
                      <TR>
                   <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
-                  <TD height=23><A href="catlist_admin" 
-            target=main>类别管理</A> </TD>
+                  <TD height=23><A href="carlist_admin" 
+            target=main>车辆管理</A> </TD>
                 </TR>
                 
-                       <TR>
+                 <TR>
                   <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
-                  <TD height=23><A href="goodstoadd_admin" 
-            target=main>车辆添加</A> </TD>
+                  <TD height=23><A href="goodsadd_admin" 
+            target=main>商品添加</A> </TD>
                 </TR>
                 
-                               <TR>
+                <TR>
                   <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
                   <TD height=23><A href="goodslist_admin" 
-            target=main>车辆管理</A> </TD>
+            target=main>商品管理</A> </TD>
                 </TR>        
               
               </TBODY>
@@ -202,7 +202,7 @@ border=0>
                             
                      <TR>
                   <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
-                  <TD height=23><A href="orderslist_admin" 
+                  <TD height=23><A href="oderslist_admin" 
             target=main>订单管理</A> </TD>
                 </TR>
               
@@ -237,13 +237,13 @@ border=0>
               <TBODY>
                       <TR>
                   <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
-                  <TD height=23><A href="abouttoupdate_admin?mvo.id=2" 
+                  <TD height=23><A href="abouttoupdate_admin/2" 
             target=main>联系我们</A> </TD>
                 </TR>
                    
                      <TR>
                   <TD width="2%"><IMG src="../admin/Images/closed.gif"></TD>
-                  <TD height=23><A href="abouttoupdate_admin?mvo.id=1" 
+                  <TD height=23><A href="abouttoupdate_admin/1" 
             target=main>关于我们</A> </TD>
                 </TR>
               

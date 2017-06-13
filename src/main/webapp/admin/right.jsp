@@ -1,11 +1,11 @@
-<%@ page language="java" import="java.util.*" pageEncoding="GB2312"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 
   <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>ÎÞ±êÌâÒ³</title>
-    <link href="Images/css1/css.css" rel="stylesheet" type="text/css">
+    <title>æ— æ ‡é¢˜é¡µ</title>
+    <link href="../adminImages/css1/css.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <form id="form1" runat="server">
